@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foodie Login</title>
+    <link rel="stylesheet" href="css/loginstyle.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h1>🍔 Foodie</h1>
+    <h2>Welcome Back!</h2>
+    <p>Login to explore delicious food</p>
+
+    <form id="loginForm">
+        <input type="text" id="username"
+               placeholder="Enter Username" required>
+
+        <input type="password" id="password"
+               placeholder="Enter Password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="error"></p>
+</div>
+
+<script src="js/loginscript.js"></script>
+<script>
+function logout() {
+    sessionStorage.removeItem("isLoggedIn");
+    window.location.replace("login.html");
+}
+
+
+</script>
+</body>
+</html>

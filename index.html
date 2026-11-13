@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie - Online Food Ordering</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Foodie<span>.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="cart-btn" id="cartButton">
+                🛒 Cart <span id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">Welcome to Foodie</p>
+
+            <h1>Delicious Food,<br>
+                Delivered To Your Door.</h1>
+
+            <p>
+                Fresh ingredients, amazing taste and fast delivery.
+                Order your favourite food today!
+            </p>
+
+            <a href="#menu" class="primary-btn">
+                Order Now
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="img/0.jfif"
+                alt="Delicious pizza">
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+
+        <div class="section-heading">
+            <p class="tagline">Our Menu</p>
+            <h2>Explore Our Delicious Food</h2>
+            <p>Choose your favourite dishes.</p>
+        </div>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search your favourite food...">
+        </div>
+
+        <!-- Category Buttons -->
+        <div class="categories">
+            <button class="category-btn active" data-category="All">All</button>
+            <button class="category-btn" data-category="Pizza">Pizza</button>
+            <button class="category-btn" data-category="Burger">Burger</button>
+            <button class="category-btn" data-category="Biryani">Biryani</button>
+            <button class="category-btn" data-category="Drinks">Drinks</button>
+        </div>
+
+        <!-- Food Products -->
+        <div class="food-container" id="foodContainer">
+            <!--food cards from the JavaScript  -->
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div>
+            <p class="tagline">About Us</p>
+            <h2>Good Food, Good Mood!</h2>
+            <p>
+                At Foodie, we believe every meal should be special.
+                We serve fresh, delicious food made with love.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions? We are happy to help!</p>
+        <p>Email: support@foodie.com</p>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="closeCart" class="close-btn">✕</button>
+        </div>
+
+        <div id="cartItems" class="cart-items">
+            <p class="empty-cart">Your cart is empty!</p>
+        </div>
+
+        <div class="cart-footer">
+            <h3>Total: ₹<span id="cartTotal">0</span></h3>
+            <button id="checkoutButton" class="primary-btn checkout-btn">
+                Checkout
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeCheckout">✕</button>
+
+            <h2>Complete Your Order</h2>
+
+            <form id="checkoutForm">
+                <input type="text" id="customerName"
+                    placeholder="Your Name" required>
+
+                <input type="tel" id="customerPhone"
+                    placeholder="Phone Number"
+                    pattern="[0-9]{10}" required>
+
+                <textarea id="customerAddress"
+                    placeholder="Delivery Address" required></textarea>
+
+                <button type="submit" class="primary-btn">
+                    Place Order
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Foodie. All Rights Reserved.</p>
+    </footer>
+<script>
+    if (sessionStorage.getItem("isLoggedIn") !== "true") {
+        window.location.replace("login.html");
+    }
+</script>
+    <script src="js/script.js"></script>
+<button onclick="logout()">Logout</button>
+
+
+</body>
+</html>
